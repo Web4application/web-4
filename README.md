@@ -1,6 +1,6 @@
   ## Web4
 
-Web4-Main is a backend orchestration layer for dynamic microservices, service discovery, and configuration management. Built and maintained by **[Your Name or Team Name]**, this project integrates **Nacos** for runtime service coordination and real-time configuration updates within a distributed Web4 architecture.
+Web4-Main is a backend orchestration layer for dynamic microservices, service discovery, and configuration management. Built and maintained by **[QUBUHUB]**, this project integrates **Nacos** for runtime service coordination and real-time configuration updates within a distributed Web4 architecture.
 
 ---
 
@@ -86,7 +86,7 @@ You are free to modify, distribute, and use it commercially.
 
 MIT License
 
-Copyright (c) 2025 [Your Name]
+Copyright (c) 2025 [QUBUHUB]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy...
 
@@ -96,6 +96,15 @@ Permission is hereby granted, free of charge, to any person obtaining a copy...
 👤 Author
 
 Built with ❤️ by [seriki yakub O ]
-Contact: [kubulee@gmail.com] | [yourwebsite.com]
+Contact: [kubulee@gmail.com] | [web4app4.com]
+
+---
+
+## 🙏 Sponsor This Project
+
+If Web4-Main helped you, consider supporting continued development:
+
+- **BTC Address**: `38MpKvskcfJXzAbpBMn5F17x51uUfuefBU`
+- **License**: See [LICENSE.txt](./LICENSE.txt) for details on commercial use and attribution
 
 ---
