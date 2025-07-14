@@ -1,0 +1,38 @@
+Web4-Main Custom License
+========================
+
+Copyright (c) 2025 [QUBUHUB]
+
+This software is provided "as is", without warranty of any kind. Permission is hereby granted, 
+free of charge, to any person obtaining a copy of this software and associated documentation files 
+(the "Software"), to deal in the Software for personal and educational use only, subject to the 
+following conditions:
+
+1. Attribution is required. You must retain this license and include credit to:
+   "Web4-Main by [serki yakub]"
+
+2. Commercial use (including SaaS platforms, enterprise systems, or profit-generating applications)
+   requires a commercial license agreement or sponsorship approval. Contact [your@email.com] 
+   or fund below to obtain commercial use rights.
+
+3. Redistribution or modification is permitted, provided that the original author is credited.
+
+4. This project is **not affiliated with, endorsed by, or officially connected to** the Nacos project 
+   or Alibaba Group in any way.
+
+---
+
+🙏 Support the Developer
+
+If you find this project helpful and wish to support future development, consider sponsoring via:
+
+**Bitcoin Wallet**:  
+`38MpKvskcfJXzAbpBMn5F17x51uUfuefBU`
+
+**Email for Licensing or Collaboration**:  
+[your@email.com]
+
+---
+
+MIT BASED - WITH COMMERCIAL CLAUSE.  
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
