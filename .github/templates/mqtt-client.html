@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Web4 MQTT Client</title>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    h1 {
+      color: #007acc;
+    }
+
+    #messages {
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+    }
+
+    input, button {
+      padding: 8px;
+      margin-right: 10px;
+    }
+
+    #form-section {
+      background: #eef;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .log {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .topic {
+      color: #888;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔌 Web4 MQTT Client</h1>
+
+  <div id="messages">
+    <p><em>Waiting for messages...</em></p>
+  </div>
+
+  <div id="form-section">
+    <label>
+      Topic:
+      <input type="text" id="topicInput" value="machine_topic">
+    </label>
+    <label>
+      Message:
+      <input type="text" id="messageInput" value="Hello from Web4!">
+    </label>
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    const client = mqtt.connect('wss://pf-f8i70zck04uhfsacjqga.cedalo.cloud:443/mqtt');
+
+    client.on('connect', () => {
+      console.log('✅ Connected to MQTT broker');
+      client.subscribe('machine_topic', (err) => {
+        if (!err) {
+          console.log('📡 Subscribed to machine_topic');
+          addMessage('Subscribed to <strong>machine_topic</strong>');
+        }
+      });
+    });
+
+    client.on('message', (topic, message) => {
+      addMessage(`<span class="topic">${topic}</span>: ${message.toString()}`);
+    });
+
+    client.on('error', (err) => {
+      console.error('❌ MQTT Error:', err);
+      addMessage(`<strong style="color:red;">MQTT Error:</strong> ${err.message}`);
+    });
+
+    const sendMessage = () => {
+      const topic = document.getElementById('topicInput').value;
+      const msg = document.getElementById('messageInput').value;
+      client.publish(topic, msg);
+      addMessage(`📤 Sent to <span class="topic">${topic}</span>: ${msg}`);
+    };
+
+    function addMessage(msg) {
+      const box = document.getElementById('messages');
+      const p = document.createElement('p');
+      p.className = 'log';
+      p.innerHTML = msg;
+      box.appendChild(p);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    window.addEventListener('beforeunload', () => client.end());
+  </script>
+
+</body>
+</html>
