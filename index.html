@@ -62,3 +62,45 @@
   </footer>
 </body>
 </html>
+<section id="mqtt-dashboard" style="border:1px solid #ccc; padding:20px; background:#fafafa; margin-top:30px;">
+  <h2>🔌 MQTT Client Panel</h2>
+
+  <div id="messages" style="height:200px; overflow-y:auto; background:#fff; border:1px solid #ccc; padding:10px; margin-bottom:15px;"></div>
+
+  <input type="text" id="topicInput" value="machine_topic" placeholder="Topic" />
+  <input type="text" id="messageInput" value="Hello from Web4!" placeholder="Message" />
+  <button onclick="sendMessage()">Send</button>
+</section>
+
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+<script>
+  const mqttClient = mqtt.connect('wss://pf-f8i70zck04uhfsacjqga.cedalo.cloud:443/mqtt');
+
+  mqttClient.on('connect', () => {
+    console.log('MQTT Connected');
+    mqttClient.subscribe('machine_topic', () => logMessage('📡 Subscribed to machine_topic'));
+  });
+
+  mqttClient.on('message', (topic, msg) => {
+    logMessage(`📥 <strong>${topic}</strong>: ${msg.toString()}`);
+  });
+
+  mqttClient.on('error', err => logMessage(`<span style="color:red;">Error:</span> ${err.message}`));
+
+  function sendMessage() {
+    const topic = document.getElementById('topicInput').value;
+    const message = document.getElementById('messageInput').value;
+    mqttClient.publish(topic, message);
+    logMessage(`📤 Sent: <strong>${topic}</strong> → ${message}`);
+  }
+
+  function logMessage(msg) {
+    const log = document.getElementById('messages');
+    const p = document.createElement('p');
+    p.innerHTML = msg;
+    log.appendChild(p);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  window.addEventListener('beforeunload', () => mqttClient.end());
+</script>
