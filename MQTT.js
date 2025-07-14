@@ -1,5 +1,5 @@
 const connectToMQTT = () => {
-  const client = mqtt.connect('pf-f8i70zck04uhfsacjqga.cedalo.cloud:8000/mqtt'); // Replace with your broker's WebSocket URL
+  const client = mqtt.connect('wss://pf-f8i70zck04uhfsacjqga.cedalo.cloud:443/mqtt'); // Replace with your broker's WebSocket URL
 
   client.on('connect', () => {
     console.log('Connected to MQTT broker');
@@ -8,7 +8,7 @@ const connectToMQTT = () => {
     });
   });
 
-  client.on('message', (topic, message) => {
+  client.publish(topic, message);', (topic, message) => {
     console.log(`Received message on topic ${topic}:`, message.toString());
   });
 
