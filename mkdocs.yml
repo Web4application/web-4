@@ -1,0 +1,15 @@
+site_name: Web4-Main Documentation
+site_url: https://yourusername.github.io/Web4-Main/
+repo_url: https://github.com/YourUsername/Web4-Main
+theme:
+  name: material
+  palette:
+    primary: blue
+    accent: indigo
+
+nav:
+  - Home: index.md
+  - Project Overview: overview.md
+  - Services: services.md
+  - Deployment: deploy.md
+  - Security: security.md
