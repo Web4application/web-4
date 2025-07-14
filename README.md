@@ -19,7 +19,7 @@ Web4-Main is a backend orchestration layer for dynamic microservices, service di
 - **Nacos** is used as a service registry and configuration server.
 - **Server.js** provides custom API logic and service interfacing.
 - **Docker + GitHub Actions** automate the build and deployment lifecycle.
-- **Shell scripts** (`bash.sh`, `build-nacos.sh`) manage build pipelines and service hooks.
+- **Shell scripts** `bash.sh`, `build-nacos.sh` manage build pipelines and service hooks.
 
 ---
 
@@ -49,6 +49,7 @@ Web4-Main is a backend orchestration layer for dynamic microservices, service di
 ---
 
 ```bash
+
 # Clone this project
 git clone https://github.com/YOUR_USERNAME/Web4-Main.git
 cd Web4-Main
@@ -64,10 +65,10 @@ docker-compose up -d
 📚 Documentation
 
 This project comes with developer notes and guides (coming soon):
-	•	docs/overview.md: System architecture
-	•	docs/services.md: How services register and fetch config
-	•	docs/deploy.md: Deployment tips and cloud setup
-	•	docs/security.md: How to secure your services
+		`docs/overview.md`: System architecture
+	•	`docs/services.md`: How services register and fetch config
+	•	`docs/deploy.md`: Deployment tips and cloud setup
+	•	`docs/security.md`: How to secure your services
 
 You may create this folder and use Markdown files to document each area.
 
@@ -95,8 +96,8 @@ Permission is hereby granted, free of charge, to any person obtaining a copy...
 
 👤 Author
 
-Built with ❤️ by [seriki yakub O ]
-Contact: [kubulee@gmail.com] | [web4app4.com]
+Built with ❤️ by seriki yakub O 
+Contact: [kubulee@gmail.com](web4app4.com)
 
 ---
 
@@ -105,6 +106,9 @@ Contact: [kubulee@gmail.com] | [web4app4.com]
 If Web4-Main helped you, consider supporting continued development:
 
 - **BTC Address**: `38MpKvskcfJXzAbpBMn5F17x51uUfuefBU`
-- **License**: See [LICENSE.txt](./LICENSE.txt) for details on commercial use and attribution
+- 
+- **License**: See [LICENSE.txt](./LICENSE.txt)
+-
+- for details on commercial use and attribution
 
 ---
