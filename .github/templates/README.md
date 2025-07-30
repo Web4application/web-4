@@ -15,6 +15,7 @@ This is a modular, browser-based MQTT dashboard built for the Web4 ecosystem. It
 Place this file in:
 
 
+
 ## 🚀 Features
 
 | Feature         | Description                                                                 |
@@ -29,8 +30,8 @@ Place this file in:
 
 ## 🧰 Dependencies
 
-- [mqtt.js](https://github.com/mqttjs/MQTT.js)
-- [Chart.js](https://www.chartjs.org/)
+- [mqtt.js](https://github.com/mqttjs/MQTT.js)  
+- [Chart.js](https://www.chartjs.org/)  
 - [NOWPayments](https://nowpayments.io/)
 
 ## 🧪 Usage
@@ -51,4 +52,4 @@ MIT — see [LICENSE.txt](../LICENSE.txt)
 
 ---
 
-Built and maintained by **kubu lee**.
+Built and maintained by **kubu lee**
