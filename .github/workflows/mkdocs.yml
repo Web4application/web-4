@@ -1,0 +1,26 @@
+site_name: Web4-Main Documentation
+site_url: https://web4application.github.io/web-4/
+repo_url: https://github.com/Web4application/web-4
+repo_name: GitHub
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: indigo
+    - scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  favicon: assets/favicon.ico
+
+nav:
+  - Home: index.md
+  - Project Overview: overview.md
+  - Services: services.md
+  - Deployment: deploy.md
+  - Security: security.md
