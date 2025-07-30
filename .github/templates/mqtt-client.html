@@ -155,6 +155,34 @@
       log.appendChild(p);
       log.scrollTop = log.scrollHeight;
     }
-  </script>
+  </script><script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+<script>
+  const client = mqtt.connect('wss://your-broker-url:port', {
+    clientId: 'alert-monitor',
+    username: 'your_username',
+    password: 'your_password'
+  });
+
+  client.on('connect', () => {
+    console.log('✅ Connected to MQTT Broker');
+  });
+
+  function publishAlert(serviceName) {
+    const payload = JSON.stringify({
+      service: serviceName,
+      status: 'DOWN',
+      timestamp: new Date().toISOString()
+    });
+    client.publish('alerts', payload);
+  }
+  if (!host.healthy) {
+  document.body.insertAdjacentHTML('afterbegin', `<div class="alert alert-danger">
+    ⚠️ Alert: ${data.name} is DOWN
+  </div>`);
+}
+if (!host.healthy) {
+  publishAlert(data.name);  // 📡 Auto-publish alert
+}
+</script>
 </body>
 </html>
