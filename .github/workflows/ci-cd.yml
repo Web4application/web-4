@@ -1,0 +1,22 @@
+name: Deploy Web4-Main
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Build Docker Images
+      run: |
+        bash ./build-nacos.sh
+        docker-compose up -d
+
+    - name: Notify Slack
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
