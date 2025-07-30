@@ -1,3 +1,4 @@
+
   ## Web4
 
 Web4-Main is a backend orchestration layer for dynamic microservices, service discovery, and configuration management. Built and maintained by **[QUBUHUB]**, this project integrates **Nacos** for runtime service coordination and real-time configuration updates within a distributed Web4 architecture.
@@ -112,3 +113,94 @@ If Web4-Main helped you, consider supporting continued development:
 - for details on commercial use and attribution
 
 ![favico.ico](https://copilot.microsoft.com/shares/V3ukpUr32VJHW43Mouycc)
+
+# Web4 Modular MQTT Dashboard
+
+This is a modular, browser-based MQTT dashboard built for the Web4 ecosystem. It includes:
+
+- 📘 Documentation tab with project links  
+- 🔌 MQTT client panel with topic/message input, live message log, and real-time chart  
+- 💰 Donation tab with embedded crypto support  
+- 🌙 Theme toggle (light/dark)  
+- 📈 Chart.js integration for live sensor data  
+- 🧠 Smart alert system and rule engine  
+- 🗃️ Timestamped message logging  
+
+## 📦 File Location
+
+Place this file in:
+
+
+## 🚀 Features
+
+| Feature         | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| MQTT Client     | Connects to Cedalo broker via WebSocket, subscribes to `machine_topic`     |
+| Message Log     | Displays incoming messages with timestamps                                 |
+| Charting        | Real-time line chart using Chart.js                                        |
+| Alerts          | Shows warning if value > 80 or < 30, and auto-publishes to `alerts` topic  |
+| Theme Toggle    | Switch between light and dark mode                                         |
+| Tab Navigation  | Switch between Docs, MQTT, and Donate views                                |
+| Donation        | NOWPayments crypto donation button                                         |
+
+## 🧰 Dependencies
+
+- [mqtt.js](https://github.com/mqttjs/MQTT.js)  
+- [Chart.js](https://www.chartjs.org/)  
+- [NOWPayments](https://nowpayments.io/)
+
+## 🧪 Usage
+
+Open the HTML file in any browser with internet access. No server required.
+
+## 🛠️ Customization
+
+You can modify:
+- Broker URL (`wss://...`)
+- Default topic (`machine_topic`)
+- Chart styling and alert thresholds
+- Add new tabs or widgets
+
+## 📜 License
+
+MIT — see [LICENSE.txt](../LICENSE.txt)
+
+---
+
+Built and maintained by **kubu lee**
+
+# Contributing to Web4 Modular MQTT Dashboard
+
+Thanks for your interest in contributing! 🎉 This project thrives on community collaboration.
+
+## 🧰 Ways to Contribute
+
+- 🛠️ Improve UI/UX or styling
+- 🧠 Add new widgets or chart types
+- 🔐 Enhance security or authentication
+- 🧪 Add testing or validation logic
+- 📚 Improve documentation or translations
+- 🐛 Report bugs or suggest features
+
+## 🧪 Development Setup
+
+1. Fork the repository  
+2. Clone your fork  
+3. Open `.github/templates/mqtt-client.html` in your editor  
+4. Test changes locally in your browser  
+5. Submit a pull request with a clear description
+
+## 📦 Coding Guidelines
+
+- Use semantic HTML and clean CSS
+- Keep JavaScript modular and readable
+- Comment complex logic
+- Follow existing naming conventions
+
+## 📜 License
+
+By contributing, you agree your work will be licensed under the MIT License.
+
+---
+
+Let’s build something amazing together! 🚀
