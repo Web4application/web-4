@@ -1,10 +1,15 @@
 pip install mkdocs-material
+
+# Clone this project
+git clone https://github.com/YOUR_USERNAME/Web4-Main.git
+cd Web4-Main
+
+# Build Docker images
+bash build-nacos.sh
+
+# Start services
+docker-compose up -d
+
+mkdocs build
 mkdocs serve
-
-# Clone the repo
-git clone https://github.com/Web4application/web-4.git
-cd web-4
-
-# Build and launch services
-./build-nacos.sh
-docker-compose up
+pip install mkdocs
