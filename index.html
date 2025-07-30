@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web4-Main Documentation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📘 Web4-Main Documentation</h1>
+    <p>Built and maintained by [Your Name]</p>
+  </header>
+  <main>
+    <h2>Documentation Index</h2>
+    <ul>
+      <li><a href="overview.md">Project Overview</a></li>
+      <li><a href="services.md">Service Architecture</a></li>
+      <li><a href="deploy.md">Deployment Guide</a></li>
+      <li><a href="security.md">Security Practices</a></li>
+    </ul>
+    <p>To contribute or sponsor this work, see the <a href="../LICENSE.txt">license</a>.</p>
+  </main>
+  <footer>
+    &copy; 2025 Web4-Main. All rights reserved.
+  </footer>
+</body>
+</html>
+<section id="mqtt-dashboard" style="border:1px solid #ccc; padding:20px; background:#fafafa; margin-top:30px;">
+  <h2>🔌 MQTT Client Panel</h2>
 
+  <div id="messages" style="height:200px; overflow-y:auto; background:#fff; border:1px solid #ccc; padding:10px; margin-bottom:15px;"></div>
+
+  <input type="text" id="topicInput" value="machine_topic" placeholder="Topic" />
+  <input type="text" id="messageInput" value="Hello from Web4!" placeholder="Message" />
+  <button onclick="sendMessage()">Send</button>
+</section>
+
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+<script>
+  const mqttClient = mqtt.connect('wss://pf-f8i70zck04uhfsacjqga.cedalo.cloud:443/mqtt');
+
+  mqttClient.on('connect', () => {
+    console.log('MQTT Connected');
+    mqttClient.subscribe('machine_topic', () => logMessage('📡 Subscribed to machine_topic'));
+  });
+
+  mqttClient.on('message', (topic, msg) => {
+    logMessage(`📥 <strong>${topic}</strong>: ${msg.toString()}`);
+  });
+
+  mqttClient.on('error', err => logMessage(`<span style="color:red;">Error:</span> ${err.message}`));
+
+  function sendMessage() {
+    const topic = document.getElementById('topicInput').value;
+    const message = document.getElementById('messageInput').value;
+    mqttClient.publish(topic, message);
+    logMessage(`📤 Sent: <strong>${topic}</strong> → ${message}`);
+  }
+
+  function logMessage(msg) {
+    const log = document.getElementById('messages');
+    const p = document.createElement('p');
+    p.innerHTML = msg;
+    log.appendChild(p);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  window.addEventListener('beforeunload', () => mqttClient.end());
+</script>
