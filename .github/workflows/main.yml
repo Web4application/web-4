@@ -24,8 +24,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload Dashboard
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: '.github/templates'
       - name: Deploy Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
