@@ -1,3 +1,22 @@
+# 🌐 Welcome to Web4
+
+**Web4** is a modular, containerized microservice architecture built with Node.js, Docker, and Nacos. It emphasizes dynamic configuration, health resilience, and seamless service discovery across distributed environments.
+
+---
+
+## 📦 Repository Structure
+
+```
+Web4-Main/
+├── Server.js              # Node.js service backend
+├── Dockerfile             # Defines the base container
+├── docker-compose.yml     # Orchestrates multiple services
+├── build-nacos.sh         # Builds and starts Nacos
+├── .github/workflows/     # CI/CD pipeline configurations
+└── docs/                  # Markdown documentation files
+
+```
+
 # Project Overview
 
 This document provides an architectural overview of the Web4-Main system, including core components and their interactions.
@@ -18,8 +37,10 @@ Web4-Main is built to support resilient, microservice-driven architectures with 
 - Container-first deployment strategy using Docker and CI/CD pipelines
 - Extensibility via custom Node.js modules
 
+
 ## 🏗️ Core Components
 
+```
 | Component      | Description                                                                 |
 |----------------|-----------------------------------------------------------------------------|
 | Nacos          | Acts as both service registry and configuration server                      |
@@ -28,10 +49,7 @@ Web4-Main is built to support resilient, microservice-driven architectures with 
 | GitHub Actions | Automates build, test, and deployment workflows                             |
 | bash.sh        | Shell script to initiate builds and manage service startup                  |
 
-## 📦 Project Structure
-
-'''
-
+```
 ## 📁 Project Structure
 
 ```
