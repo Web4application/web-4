@@ -1,3 +1,7 @@
+![Build](https://github.com/Web4application/web-4/actions/workflows/main.yml/badge.svg)
+![License](https://img.shields.io/github/license/Web4application/web-4)
+
+
 # 🌐 Welcome to Web4
 
 **Web4** is a modular, containerized microservice architecture built with Node.js, Docker, and Nacos. It emphasizes dynamic configuration, health resilience, and seamless service discovery across distributed environments.
@@ -70,3 +74,8 @@ Web4-Main/
 - Simplify orchestration for distributed environments
 
 Web4-Main empowers backend teams to focus on service logic while infrastructure, discovery, and updates are automated behind the scenes.
+
+## 👥 Contributors
+
+- [@Web4application](https://github.com/Web4application) – Architect & Maintainer
+- [@seriki](https://github.com/seriki) – DevOps Contributor
