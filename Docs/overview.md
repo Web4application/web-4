@@ -6,3 +6,49 @@ This document provides an architectural overview of the Web4-Main system, includ
 - Nacos integration for dynamic service discovery
 - Docker container setup
 - CI/CD using GitHub Actions
+
+# Project Overview
+
+## 🧠 Architecture Philosophy
+
+Web4-Main is built to support resilient, microservice-driven architectures with full lifecycle automation. Its primary goals are:
+
+- Seamless service discovery via Nacos
+- Dynamic configuration updates across services
+- Container-first deployment strategy using Docker and CI/CD pipelines
+- Extensibility via custom Node.js modules
+
+## 🏗️ Core Components
+
+| Component      | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| Nacos          | Acts as both service registry and configuration server                      |
+| Server.js      | Hosts custom backend logic and service integrations                         |
+| Docker         | Containerizes each service for consistent runtime across environments       |
+| GitHub Actions | Automates build, test, and deployment workflows                             |
+| bash.sh        | Shell script to initiate builds and manage service startup                  |
+
+## 📦 Project Structure
+
+'''
+
+## 📁 Project Structure
+
+```
+Web4-Main/
+├── Server.js              # Node.js service backend
+├── Dockerfile             # Defines the base container
+├── docker-compose.yml     # Orchestrates multiple services
+├── build-nacos.sh         # Builds and starts Nacos service
+├── .github/workflows/     # CI/CD pipeline configurations
+└── docs/                  # Markdown documentation files
+
+
+```
+## 🎯 Key Goals
+
+- Maintain high availability across services
+- Enable configuration changes without redeployment
+- Simplify orchestration for distributed environments
+
+Web4-Main empowers backend teams to focus on service logic while infrastructure, discovery, and updates are automated behind the scenes.
