@@ -1,0 +1,31 @@
+name: Full Web4 CI/CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Nacos & Server
+        run: bash build-nacos.sh
+
+      - name: Docker Compose Up
+        run: docker-compose up -d --build
+
+  deploy-dashboard:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload Dashboard
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.github/templates'
+      - name: Deploy Pages
+        uses: actions/deploy-pages@v2
