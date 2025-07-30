@@ -3,6 +3,8 @@
 
 Web4-Main is a backend orchestration layer for dynamic microservices, service discovery, and configuration management. Built and maintained by **[QUBUHUB]**, this project integrates **Nacos** for runtime service coordination and real-time configuration updates within a distributed Web4 architecture.
 
+https://web4application.github.io/web-4/.github/templates/mqtt-client.html
+
 ---
 
 ## 🔧 Features
