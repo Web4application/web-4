@@ -15,7 +15,7 @@ jobs:
         run: bash build-nacos.sh
 
       - name: Docker Compose Up
-        run: docker-compose up -d --build
+        run: docker-compose up -d
 
   deploy-dashboard:
     needs: build
@@ -24,7 +24,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload Dashboard
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: '.github/templates'
       - name: Deploy Pages
