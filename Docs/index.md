@@ -13,7 +13,7 @@ Web4 is a modern application framework designed for rapid deployment, scalabilit
 
 ## 🚀 Getting Started
 
-```bash
+```
 # Clone the repo
 git clone https://github.com/Web4application/web-4.git
 cd web-4
@@ -22,3 +22,30 @@ cd web-4
 ./build-nacos.sh
 docker-compose up
 
+# 📖 Web4-Main Documentation Portal
+
+```
+Welcome to the official docs for **Web4-Main**, a modular microservice framework powered by Node.js, Docker, and Nacos.
+
+## 🚪 Entry Points
+
+Explore the project:
+
+- 📘 [Project Overview](overview.md)
+- 🔧 [Service Architecture](services.md)
+- 🚀 [Deployment Guide](deploy.md)
+- 🛡️ [Security Practices](security.md)
+
+## 🧪 Live MQTT Dashboard
+
+The Web4-Main live page includes a built-in MQTT client panel. You can test service communication using:
+
+- **Topic:** `machine_topic`
+- **Default Message:** `Hello from Web4!`
+- **Broker:** Cedalo Cloud via secure WebSocket
+
+📍 Visit: [`index.html`](index.html) for live message testing and logging.
+
+---
+
+💡 Want to contribute? Check the [license](../LICENSE.txt) or fork us at [GitHub](https://github.com/Web4application/web-4)
