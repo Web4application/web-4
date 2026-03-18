@@ -43,8 +43,8 @@ This document explains how individual services within Web4 interact with the Nac
   ```json
   {
     "serviceName": "web4-api",
-    "ip": "172.18.0.2",
-    "port": 8080,
+    "ip": "127.0.0.1",
+    "port": 0.0.0.0
     "metadata": {
       "version": "1.0.0",
       "healthCheck": "/health"
@@ -53,7 +53,7 @@ This document explains how individual services within Web4 interact with the Nac
 
 ## 📊 Service–Nacos Sequence Diagram
 
-```text
+```bash
 Service Start
      │
      ├──▶ Register with Nacos (POST /instance)
@@ -73,7 +73,7 @@ Service Start
 ```
 
 ## 📈 Mermaid Sequence Diagram: Web4–Nacos Flow
-
+```jsonl
 sequenceDiagram
     participant Service
     participant Nacos
@@ -90,4 +90,4 @@ sequenceDiagram
         Nacos-->>Nacos: Deregister service
         Service->>Nacos: Retry & Re-register
     end
-
+```
