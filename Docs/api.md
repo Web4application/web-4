@@ -6,7 +6,7 @@ This document outlines the core APIs exposed by the Web4 backend server (`Server
 
 ## 🧭 Base URL
 All endpoints are relative to:  
-`http://localhost:PORT/api/`
+`http://127.0.0.1:3000/api/`
 
 ---
 
@@ -19,6 +19,6 @@ All endpoints are relative to:
 ```json
 {
   "serviceName": "auth-service",
-  "host": "192.168.1.5",
+  "host": "127.0.0.1",
   "port": "8080"
 }
