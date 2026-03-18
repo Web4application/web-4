@@ -10,7 +10,7 @@
 
 ## 📦 Repository Structure
 
-```
+```bash
 Web4-Main/
 ├── Server.js              # Node.js service backend
 ├── Dockerfile             # Defines the base container
@@ -44,7 +44,7 @@ Web4-Main is built to support resilient, microservice-driven architectures with 
 
 ## 🏗️ Core Components
 
-```
+```code
 | Component      | Description                                                                 |
 |----------------|-----------------------------------------------------------------------------|
 | Nacos          | Acts as both service registry and configuration server                      |
@@ -56,7 +56,7 @@ Web4-Main is built to support resilient, microservice-driven architectures with 
 ```
 ## 📁 Project Structure
 
-```
+```code
 Web4-Main/
 ├── Server.js              # Node.js service backend
 ├── Dockerfile             # Defines the base container
